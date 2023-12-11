@@ -9,6 +9,7 @@ function LoginForm() {
       <div className="grid">
         <label className="font-bold text-gray-500 pb-3">Enter Email</label>
         <input
+        value={email}
           onChange={(e) => setEmail(e.target.value)}
           className="bg-gray-200 rounded border  border-2 px-2 border-gray-200 focus:bg-white focus:border-cyan-500 focus:outline-none   w-[400px] py-2"
         />
@@ -16,6 +17,7 @@ function LoginForm() {
       <div className="grid mt-3">
         <label className="font-bold text-gray-500 pb-3">Enter Password</label>
         <input
+        value={password}
           className="bg-gray-200 rounded border  border-2 px-2 border-gray-200 focus:bg-white focus:border-cyan-500 focus:outline-none   w-[400px] py-2"
           onChange={(e) => setPassword(e.target.value)}
         />

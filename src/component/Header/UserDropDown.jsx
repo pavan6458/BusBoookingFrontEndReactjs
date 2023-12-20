@@ -6,6 +6,10 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
+const clearstorage = () =>{
+  localStorage.clear();
+
+}
 export default function UserDropDown() {
     const user = localStorage.getItem("name");
   return (
@@ -31,13 +35,13 @@ export default function UserDropDown() {
             <Menu.Item>
               {({ active }) => (
                 <a
-                  href="#"
+                  href="/myprofile"
                   className={classNames(
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
                 >
-                  Edit
+                  My Profile
                 </a>
               )}
             </Menu.Item>
@@ -120,8 +124,9 @@ export default function UserDropDown() {
                     active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
                     'block px-4 py-2 text-sm'
                   )}
+                  onClick={clearstorage}
                 >
-                  Delete
+                  Logout
                 </a>
               )}
             </Menu.Item>

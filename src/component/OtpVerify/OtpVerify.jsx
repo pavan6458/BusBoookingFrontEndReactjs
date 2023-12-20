@@ -54,7 +54,7 @@ function OtpVerify() {
                   <div class="flex flex-row items-center justify-between mx-auto w-full max-w-xs">
                     <div class="w-12 h-12 ">
                       <input
-                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        class="w-full h-full flex flex-col items-center justify-center text-center  outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
                         type="text"
                         name=""
                         maxLength={1}
@@ -63,7 +63,7 @@ function OtpVerify() {
                     </div>
                     <div class="w-12 h-12 ">
                       <input
-                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        class="w-full h-full flex flex-col items-center justify-center text-center  outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
                         type="text"
                         name=""
                         id=""
@@ -72,7 +72,7 @@ function OtpVerify() {
                     </div>
                     <div class="w-12 h-12 ">
                       <input
-                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        class="w-full h-full flex flex-col items-center justify-center text-center  outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
                         type="text"
                         name=""
                         id=""
@@ -81,7 +81,7 @@ function OtpVerify() {
                     </div>
                     <div class="w-12 h-12 ">
                       <input
-                        class="w-full h-full flex flex-col items-center justify-center text-center px-5 outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
+                        class="w-full h-full flex flex-col items-center justify-center text-center  outline-none rounded-xl border border-gray-200 text-lg bg-white focus:bg-gray-50 focus:ring-1 ring-blue-700"
                         type="text"
                         name=""
                         maxLength={1}
@@ -93,7 +93,7 @@ function OtpVerify() {
                   <div class="flex flex-col space-y-5">
                     <div className="flex justify-center">
                       <button
-                        class="flex flex-row items-center justify-center text-center w-[80%] border rounded-xl outline-none py-5 bg-blue-700 border-none text-white text-sm shadow-sm"
+                        class="flex flex-row items-center justify-center text-center w-[80%] border rounded-xl outline-none py-2 bg-blue-700 border-none text-white text-sm shadow-sm"
                         onClick={verifyOtp}
                       >
                         Verify Account

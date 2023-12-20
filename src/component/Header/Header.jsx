@@ -10,7 +10,7 @@ function Header() {
   return (
     <div>
       <div className="px-10 py-2 flex w-full justify-between border-b-2">
-        <p className="text-xl font-medium text-gray-900 dark:text-white mb-2">BookMyYatra</p>
+        <button className="text-xl font-medium text-gray-900 dark:text-white mb-2" onClick={()=>navigate("/")}>BookMyYatra</button>
         <div className="flex">
           {auth == null ? (
             <div className="flex">

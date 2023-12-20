@@ -48,7 +48,7 @@ function PofileForm() {
         <h5 class="text-xl font-medium text-gray-900 dark:text-white mb-2">
           Profile Details
         </h5>
-        <div class="mb-5">
+        <div class="mb-4">
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
@@ -62,7 +62,7 @@ function PofileForm() {
             onChange={(e) => setName(e.target.value)}
           />
         </div>
-        <div class="mb-5">
+        <div class="mb-4">
           <label
             for="base-input"
             class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"

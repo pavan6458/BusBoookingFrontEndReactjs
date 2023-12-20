@@ -6,7 +6,9 @@ import Homepage from './component/Homepage/Homepage';
 import Register from './component/Register';
 import OtpVerify from './component/OtpVerify/OtpVerify';
 import Profile from './component/ProfileCreation/Profile';
+import SearchList from './component/SearchList/SearchList';
 import Header from './component/Header/Header';
+import MyProfile from './component/MyProfile/MyProfile';
 
 function App() {
  const router =  createBrowserRouter([
@@ -15,7 +17,9 @@ function App() {
     {path:"/Register",element:<Register/>},
     {path:"/otpverify",element:<OtpVerify/>},
     {path:"/profile",element:<Profile/>},
-    {path:"/header",element:<Header/>}
+    {path:"/header",element:<Header/>},
+    {path:"/myprofile",element:<MyProfile/>},
+    {path:"/busearch",element:<SearchList/>}
   ])
   return (
     <RouterProvider router={router} />

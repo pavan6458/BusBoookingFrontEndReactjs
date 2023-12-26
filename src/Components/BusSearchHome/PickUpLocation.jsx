@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const PickUpLocation = ({ selectedLocation,   onLocationChange }) => {
+const PickUpLocation = ({ error,selectedLocation,   onLocationChange }) => {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const PickUpLocation = ({ selectedLocation,   onLocationChange }) => {
     <>
       <div className="searchMenu-loc js-form-dd js-liverSearch border-r-2 border-gray-300 w-[10rem]">
        
-          <h4 className="text-15 font-[500] ls-2 ">Pick up location</h4>
+          <h4 className={`text-15 font-[500] ls-2 ${error&&`text-red-600 font-bold`}`}>Pick up location</h4>
           <div className="text-15 text-light-1 ls-2 lh-16 ">
             <input
               autoComplete="off"

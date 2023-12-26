@@ -1,10 +1,10 @@
 import React from 'react'
 import Header from '../Header/Header'
-import ListOfBuses from './ListOfBuses'
+import Filter from './Filter'
 
 function SearchList() {
   return (
-    <div><Header/><ListOfBuses/></div>
+    <div><Header/><Filter/></div>
     
   )
 }

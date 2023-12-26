@@ -1,9 +1,14 @@
 import { useState } from "react";
 
-const GuestSearch = () => {
-  const [searchValue, setSearchValue] = useState("");
-  const [selectedItem, setSelectedItem] = useState(null);
+const GuestSearch = ({onchangeNo,setNoOfPassangers}) => {
+  const [searchValue, setSearchValue] = useState(onchangeNo==undefined ? undefined : onchangeNo);
+  
+  const handelchange = (value) =>{
+    setSearchValue(value);
+    setNoOfPassangers(value)
 
+  }
+  
 
 
 
@@ -19,7 +24,7 @@ const GuestSearch = () => {
               placeholder="No of passengers"
               className="js-search js-dd-focus border-none p-0 pt-2 focus:ring-0 w-[9.5rem] text-sm"
               value={searchValue}
-              onChange={(e) => setSearchValue(e.target.value)}
+              onChange={(e) => handelchange(e.target.value)}
             />
           </div>
         </div>

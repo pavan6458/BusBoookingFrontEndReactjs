@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const PickUpLocation = ({dropLocationmethod,onDropChange}) => {
+const PickUpLocation = ({error,dropLocationmethod,onDropChange}) => {
  const [dropLocation,setDropLocation]=useState();
 
 
@@ -20,7 +20,7 @@ const PickUpLocation = ({dropLocationmethod,onDropChange}) => {
     <>
       <div className="searchMenu-loc js-form-dd js-liverSearch border-r-2 border-gray-300 ml-10 w-[10rem] z-5">
       
-          <h4 className="text-15 font-[500] ls-2 ">Drop off location</h4>
+          <h4 className={`text-15 font-[500] ls-2 ${error && `text-red-500 font-bold`}`}>Drop off location</h4>
           <div className="text-15 text-light-1 ls-2 lh-16 ">
             <input
               autoComplete="off"

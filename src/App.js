@@ -1,5 +1,4 @@
-// App.js
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Login from "./Components/login/index";
 import Homepage from "./Components/Homepage/Homepage";
@@ -15,38 +14,43 @@ import MyBooking from "./Components/MyBookings";
 import SingleBookingInfo from "./Components/IndividualBookingInfo";
 import Admin from "./Components/Admin/AdminLogin/Admin";
 import AdminHomepage from "./Components/Admin/main/Main";
-import Schedule from "./Components/Admin/Schedule/Schedule"; 
+import Schedule from "./Components/Admin/Schedule/Schedule";
 import HomepageAdmin from "./Components/Admin/HomePage/Homepage";
 import Bus from "./Components/Admin/Bus/Bus";
 import BusOperator from "./Components/Admin/BusOperator/BusOperator";
 import Bookings from "./Components/Admin/Bookings/Bookings";
 
 function App() {
-  const [admin, setAdmin] = useState(true);
-  return admin ? (
+  const [admin, setAdmin] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
+  useEffect(()=>{
+   const id= sessionStorage.getItem("id");
+   const admin = sessionStorage.getItem("ui");
+   if(id)
+   {
+    setIsAdminAuthenticated(true)
+   }
 
+   if(admin==1)
+   {
+    setAdmin(true);
+   }
+  })
+  const granted =(data)=>{
+    setIsAdminAuthenticated(data)
+  }
 
-    <div className="flex">
-        <div className="w-[20%]">
-          <AdminHomepage />
-        </div>
-        <div className="w-full">
-          <Routes>
-          <Route path="/admin" element={<Admin />} />
+  const adminaccess =(props)=>{
+    if(props==true)
+    {
+      sessionStorage.setItem("ui",1)
+      setAdmin(true)
+    }
+    
+  }
 
-            <Route path="/" element={<HomepageAdmin />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path="/bus" element={<Bus />} />
-            <Route path="/busoperator" element={<BusOperator />} />
-            <Route path="/booking" element={<Bookings/>}/>
-          </Routes>
-        </div>
-      </div>
-
-   
-  ) : (
-    <>
-       <Routes>
+  const publicRoutes = (
+    <Routes>
       <Route path="/" element={<Homepage />} />
       <Route path="/Login" element={<Login />} />
       <Route path="/Register" element={<Register />} />
@@ -59,11 +63,33 @@ function App() {
       <Route path="/payment" element={<PaymentPage />} />
       <Route path="/MyBooking" element={<MyBooking />} />
       <Route path="/individual" element={<SingleBookingInfo />} />
-      <Route path="/Admin" element={<Admin />} />
-      {/* Add more routes as needed */}
+      <Route path="/Admin" element={<Admin adminaccess={adminaccess} />} />
     </Routes>
-    </>
   );
+
+  const adminRoutes = (
+    
+    isAdminAuthenticated ?  
+     <div className="flex">
+      <div className="w-[20%]">
+        <AdminHomepage />
+      </div>
+      <div className="w-full">
+        <Routes>
+          <Route path="/" element={<HomepageAdmin />} />
+          <Route path="/schedule" element={<Schedule />} />
+          <Route path="/bus" element={<Bus />} />
+          <Route path="/busoperator" element={<BusOperator />} />
+          <Route path="/booking" element={<Bookings />} />
+        </Routes>
+      </div>
+    </div>
+
+    : <Admin granted ={granted}/>
+    
+  );
+
+  return admin ? adminRoutes : publicRoutes;
 }
 
 export default App;

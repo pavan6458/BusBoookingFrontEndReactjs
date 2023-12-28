@@ -1,22 +1,24 @@
-import React, { useState } from "react";
-import { Link } from 'react-router-dom';
-import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from 'react-router-dom';
+import { Sidebar, Menu, MenuItem } from "react-pro-sidebar";
 import Homepage from "../HomePage/Homepage";
 import Schedule from "../Schedule/Schedule";
 
 function AdminHomepage() {
-  const [presentRoute, setPresentRoute] = useState("Homepage");
-  const route = (route) => {
-    setPresentRoute(route);
-  };
+  const location = useLocation();
+  const [currentUrl, setCurrent] = useState();
+
+  useEffect(() => {
+    setCurrent(location.pathname);
+  }, [location.pathname]);
+
   return (
     <Sidebar>
       <Menu>
-      <MenuItem component={<Link to="/" />}> Dashboard</MenuItem>
-      <MenuItem component={<Link to="/bus" />}> Bus</MenuItem>
-      <MenuItem component={<Link to="/busoperator" />}> Bus Operator</MenuItem>
-      <MenuItem component={<Link to="/schedule" />}> schedule</MenuItem>
-
+        <MenuItem className={`${currentUrl === "/" && "bg-blue-400"}`} component={<Link to="/" />}> Dashboard</MenuItem>
+        <MenuItem className={`${currentUrl === "/bus" && "bg-blue-400"}`} component={<Link to="/bus" />}> Bus</MenuItem>
+        <MenuItem className={`${currentUrl === "/busoperator" && "bg-blue-400"}`} component={<Link to="/busoperator" />}> Bus Operator</MenuItem>
+        <MenuItem className={`${currentUrl === "/schedule" && "bg-blue-400"}`} component={<Link to="/schedule" />}> Schedule</MenuItem>
       </Menu>
     </Sidebar>
   );

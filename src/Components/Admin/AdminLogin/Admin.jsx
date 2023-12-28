@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
-function Admin() {
+function Admin(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const navigate = useNavigate();
@@ -38,6 +38,8 @@ function Admin() {
         if (result.StatusCode === "OK") {
           sessionStorage.setItem("companyName", result.Response.companyName);
           sessionStorage.setItem("id", result.Response.id);
+          props.adminaccess(true);
+          props.granted(true);
           navigate("/BusHome");
         }
       })

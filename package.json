@@ -9,6 +9,7 @@
     "@heroicons/react": "^2.0.18",
     "@iconify/icons-heroicons-solid": "^1.2.6",
     "@mui/material": "^5.15.2",
+    "@mui/x-data-grid": "^6.18.6",
     "@react-icons/all-files": "^4.1.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",

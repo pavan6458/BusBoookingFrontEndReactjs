@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Homepage() {
+function HomepageAdmin() {
   return (
     <div>
         <div>
@@ -29,4 +29,4 @@ function Homepage() {
   )
 }
 
-export default Homepage
+export default HomepageAdmin

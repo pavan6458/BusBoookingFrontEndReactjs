@@ -16,6 +16,10 @@ import SingleBookingInfo from "./Components/IndividualBookingInfo";
 import Admin from "./Components/Admin/AdminLogin/Admin";
 import AdminHomepage from "./Components/Admin/main/Main";
 import Schedule from "./Components/Admin/Schedule/Schedule"; 
+import HomepageAdmin from "./Components/Admin/HomePage/Homepage";
+import Bus from "./Components/Admin/Bus/Bus";
+import BusOperator from "./Components/Admin/BusOperator/BusOperator";
+import Bookings from "./Components/Admin/Bookings/Bookings";
 
 function App() {
   const [admin, setAdmin] = useState(true);
@@ -28,20 +32,13 @@ function App() {
         </div>
         <div className="w-full">
           <Routes>
-            <Route path="/" element={<Schedule />} />
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/otpverify" element={<OtpVerify />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/header" element={<Header />} />
-            <Route path="/myprofile" element={<MyProfile />} />
-            <Route path="/busearch" element={<SearchList />} />
-            <Route path="/completeBooking" element={<CompleteBooking />} />
-            <Route path="/payment" element={<PaymentPage />} />
-            <Route path="/MyBooking" element={<MyBooking />} />
-            <Route path="/individual" element={<SingleBookingInfo />} />
-            <Route path="/Admin" element={<Admin />} />
-            {/* Add more routes as needed */}
+          <Route path="/admin" element={<Admin />} />
+
+            <Route path="/" element={<HomepageAdmin />} />
+            <Route path="/schedule" element={<Schedule />} />
+            <Route path="/bus" element={<Bus />} />
+            <Route path="/busoperator" element={<BusOperator />} />
+            <Route path="/booking" element={<Bookings/>}/>
           </Routes>
         </div>
       </div>

@@ -12,13 +12,11 @@ function AdminHomepage() {
   return (
     <Sidebar>
       <Menu>
-      <MenuItem component={<Link to="/home" />}> Documentation</MenuItem>
-        <SubMenu label="Charts">
-          <MenuItem> Pie charts </MenuItem>
-          <MenuItem> Line charts </MenuItem>
-        </SubMenu>
-        <MenuItem> Documentation </MenuItem>
-        <MenuItem> Calendar </MenuItem>
+      <MenuItem component={<Link to="/" />}> Dashboard</MenuItem>
+      <MenuItem component={<Link to="/bus" />}> Bus</MenuItem>
+      <MenuItem component={<Link to="/busoperator" />}> Bus Operator</MenuItem>
+      <MenuItem component={<Link to="/schedule" />}> schedule</MenuItem>
+
       </Menu>
     </Sidebar>
   );
